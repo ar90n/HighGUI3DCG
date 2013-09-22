@@ -1,0 +1,25 @@
+*** /Users/argon/3dcg/cg_gcc/prj/Makefile	2013-09-15 09:00:39.000000000 +0900
+--- Makefile	2013-09-22 12:52:30.000000000 +0900
+***************
+*** 9,18 ****
+  OBJECT=$(TARGET).o
+  
+  
+! CC = gcc -g -w -O3 -fno-for-scope  -fthis-is-variable -I $(INCDIR)
+  #CC = gcc -g -w  -fthis-is-variable
+! CCFLAG = `gtk-config --cflags`
+! LINKFLAG = `gtk-config --libs` -lXpm -lXpm -ljpeg -lpng -ltiff -lz -lgif -lm -lstdc++
+  COMPILE = $(CC) $(CCFLAG)
+  LINK = $(CC) $(LINKFLAG) 
+  
+--- 9,18 ----
+  OBJECT=$(TARGET).o
+  
+  
+! CC = g++ -g -w -O3 -fno-for-scope  -fthis-is-variable -I $(INCDIR)
+  #CC = gcc -g -w  -fthis-is-variable
+! CCFLAG = `pkg-config --cflags opencv`
+! LINKFLAG = `pkg-config --libs opencv` -lm
+  COMPILE = $(CC) $(CCFLAG)
+  LINK = $(CC) $(LINKFLAG) 
+  
