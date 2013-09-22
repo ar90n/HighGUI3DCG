@@ -3,7 +3,7 @@ import os
 import commands
 
 target = './src/win.a'
-sources = glob.glob( os.path.join( './', 'src', '*.cpp' ) )
+sources = [ './src/win.cpp', './src/win_highgui.cpp' ]
 include_dir = [ './inc' ]
 env = Environment()
 env.ParseConfig( 'pkg-config --cflags opencv' )
